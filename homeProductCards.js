@@ -11,6 +11,13 @@ export const showProductContainer = (products) => {
         productClone.querySelector(".productName").textContent = name;
         productClone.querySelector('.productImage').src=image;
         productClone.querySelector('.productImage').alt=name;
+        productClone.querySelector('.productDescription').textContent=description;
+        productClone.querySelector('.productPrice').textContent= `£${price}`;
+        productClone.querySelector('.productActualPrice').textContent= `${price * 4}`;
+        productClone.querySelector('.productStock').textContent=stock;
+        productClone.querySelector('.category').textContent=category;
+        productClone.querySelector('.category').textContent=category;
+
 
         productContainer.append(productClone);
     });
