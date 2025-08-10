@@ -15,6 +15,16 @@ export const addToCart=(envet,id,stock)=>{
     // console.log(quantity, price);
     
     price=price.replace("£","");
+
+// same product addto cart ma add hunu vaya n just price and quantity matrai increase hunu paryo
+    let existingProd=arrLocalStorageProduct.find(
+        (curProd)=> curProd.id===id);
+        if(existingProd){
+            return false;
+        }
+
+
+
     price=Number(price * quantity);
     quantity=Number(quantity);
 
