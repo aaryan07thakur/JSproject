@@ -13,9 +13,10 @@ export const addToCart=(envet,id,stock)=>{
     // console.log(quantity, price);
     
     price=price.replace("£","");
-    price=price * quantity;
+    price=Number(price * quantity);
+    quantity=Number(quantity);
 
-    arrLocalStorageProduct.push({id, quantity, price})
+    arrLocalStorageProduct.push({id, quantity, price});
     localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct));
     
 
