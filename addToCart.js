@@ -2,9 +2,10 @@ import { getCartProductFromLS } from "./getCartProducts.js";
 
 import { updateCartValue } from "./updateCartValue.js";
 
-
+// To get the cart data from localstorage
+// to update the cart value ans also to get the data always ready from localstorage
 getCartProductFromLS();
-
+// ======================AddTo data in localStorage =========================
 export const addToCart=(envet,id,stock)=>{
 
     let arrLocalStorageProduct=getCartProductFromLS();
