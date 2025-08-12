@@ -2,6 +2,9 @@ import { getCartProductFromLS } from "./getCartProducts.js";
 
 import { updateCartValue } from "./updateCartValue.js";
 
+
+getCartProductFromLS();
+
 export const addToCart=(envet,id,stock)=>{
 
     let arrLocalStorageProduct=getCartProductFromLS();
@@ -19,7 +22,25 @@ export const addToCart=(envet,id,stock)=>{
 // same product addto cart ma add hunu vaya n just price and quantity matrai increase hunu paryo
     let existingProd=arrLocalStorageProduct.find(
         (curProd)=> curProd.id===id);
+
+
+        if(existingProd && quantity > 1){
+            // console.log('quantity', quantity)
+            quantity= Number(existingProd.quantity) + Number(quantity)
+            price=Number(price * quantity);
+
+            let updatedCart={id, quantity, price};
+
+            updatedCart=arrLocalStorageProduct.map((curProd) =>{
+                return (curProd.id === id) ? updatedCart: curProd;
+            });
+            console.log(updatedCart);
+            localStorage.setItem("cartProductLS",JSON.stringify(updatedCart));
+
+        };
+
         if(existingProd){
+            // alert("This Product is already in cart");
             return false;
         }
 

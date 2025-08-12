@@ -1,3 +1,6 @@
+import { updateCartValue } from "./updateCartValue.js";
+
+
 export const getCartProductFromLS=()=>{
     let cartProducts=localStorage.getItem("cartProductLS");
     if(!cartProducts){
@@ -5,5 +8,9 @@ export const getCartProductFromLS=()=>{
     }
 
     cartProducts=JSON.parse(cartProducts);
+
+// caet ko value always update hun x 
+    updateCartValue(cartProducts);
+
     return cartProducts;
 }
