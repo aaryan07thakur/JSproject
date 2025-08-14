@@ -1,6 +1,8 @@
 import { getCartProductFromLS } from "./getCartProducts.js";
 import {fetchQuantityFromCartLS} from "./fetchQuantityFromCartLS.js"
 import { removeProdFromCart } from "./removeProdFromCart.js";
+import { incrementDecrement } from "./incrementDecrement.js";
+
 
 const cartElement = document.querySelector("#productCartContainer");
 const templateContainer = document.querySelector("#productCartTemplate");
@@ -21,6 +23,12 @@ const showCartProduct = (products) => {
     productClone.querySelector(".productQuantity").textContent=lSActualData.quantity
     productClone.querySelector(".productPrice").textContent=lSActualData.price
     
+// handle increment and decrement button of addto cart section
+    productClone.querySelector(".stockElement").addEventListener("click",(event)=>{
+      incrementDecrement(event, id, stock, price);
+    });
+
+
 
     productClone.querySelector(".remove-to-cart-button")
     .addEventListener("click",()=>removeProdFromCart(id));
