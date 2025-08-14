@@ -1,4 +1,6 @@
 import { getCartProductFromLS } from "./getCartProducts.js";
+import {fetchQuantityFromCartLS} from "./fetchQuantityFromCartLS.js"
+// import { removeProdFromCart } from "./removeProdFromCart.js";
 
 const cartElement = document.querySelector("#productCartContainer");
 const templateContainer = document.querySelector("#productCartTemplate");
@@ -10,19 +12,18 @@ const showCartProduct = (products) => {
 
     let productClone = document.importNode(templateContainer.content, true);
 
-    // const lSActualData=fetcchQuantityFromCartLS(id,stock, price);
+    const lSActualData=fetchQuantityFromCartLS(id,price);
 
     productClone.querySelector("#cardValue").setAttribute("id",`card${id}`);
     productClone.querySelector(".category").textContent = category;
     productClone.querySelector(".productName").textContent=name;
     productClone.querySelector(".productImage").src=image;
-    // productClone.querySelector(".productQuantity").textContent=lSActualData.quantity
-    // productClone.querySelector(".productPrice").textContent=lSActualData.price
-    // // Add other fields here
-    // productClone.querySelector(".name").textContent = name;
-    // productClone.querySelector(".price").textContent = price;
-    // productClone.querySelector("img").src = image;
-    // productClone.querySelector("img").alt = name;
+    productClone.querySelector(".productQuantity").textContent=lSActualData.quantity
+    productClone.querySelector(".productPrice").textContent=lSActualData.price
+    
+
+    productClone.querySelector(".remove-to-cart-button")
+    .addEventListener("click",()=>removeProdFromCart(id));
 
     cartElement.append(productClone);
   });
