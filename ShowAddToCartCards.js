@@ -1,6 +1,6 @@
 import { getCartProductFromLS } from "./getCartProducts.js";
 import {fetchQuantityFromCartLS} from "./fetchQuantityFromCartLS.js"
-// import { removeProdFromCart } from "./removeProdFromCart.js";
+import { removeProdFromCart } from "./removeProdFromCart.js";
 
 const cartElement = document.querySelector("#productCartContainer");
 const templateContainer = document.querySelector("#productCartTemplate");
