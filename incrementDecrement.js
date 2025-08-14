@@ -42,6 +42,8 @@ export const incrementDecrement=(event, id, stock, Price)=>{
 
     //finall update the price in localstorage 
     localStoragePrice=Price*quantity;
+    // decimal pachhadi 2 ta number
+    localStoragePrice=Number(localStoragePrice.toFixed(2))
 
 
 
@@ -53,4 +55,7 @@ export const incrementDecrement=(event, id, stock, Price)=>{
     // console.log(updatedCart);
 
     localStorage.setItem("cartProductLS", JSON.stringify(updatedCart));
+    // also need to reflect the change on the screen too
+    productQuantity.innerText=quantity;
+    productPrice.innerText=localStoragePrice
 };
