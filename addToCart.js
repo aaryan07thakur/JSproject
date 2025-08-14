@@ -38,6 +38,9 @@ export const addToCart=(envet,id,stock)=>{
             console.log(updatedCart);
             localStorage.setItem("cartProductLS",JSON.stringify(updatedCart));
 
+            //   // show toast when product added to the cart
+            //     showToast("add",id);
+
         };
 
         if(existingProd){
@@ -55,10 +58,20 @@ export const addToCart=(envet,id,stock)=>{
     localStorage.setItem("cartProductLS", JSON.stringify(arrLocalStorageProduct));
 // ===========================================================
 
+
+
+
+
+
+
+
     //update the cart button value
     // cart ma kati wota value x tyo pata lagau n ko lagie
 
     updateCartValue(arrLocalStorageProduct);
+
+    //   // show toast when product added to the cart
+    //     showToast("add",id);
     
 
 };

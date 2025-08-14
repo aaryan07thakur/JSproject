@@ -2,6 +2,8 @@ import { getCartProductFromLS } from "./getCartProducts.js";
 import {fetchQuantityFromCartLS} from "./fetchQuantityFromCartLS.js"
 import { removeProdFromCart } from "./removeProdFromCart.js";
 import { incrementDecrement } from "./incrementDecrement.js";
+import { updateCartProductTotal } from "./updateCartProductTotal.js";
+
 
 
 const cartElement = document.querySelector("#productCartContainer");
@@ -58,3 +60,6 @@ const loadCartProducts = async () => {
 
 // Call the async function
 loadCartProducts();
+
+
+updateCartProductTotal();
