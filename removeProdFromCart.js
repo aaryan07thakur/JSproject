@@ -1,6 +1,6 @@
 import { getCartProductFromLS } from "./getCartProducts.js";
 import { updateCartProductTotal } from "./updateCartProductTotal.js";
-// import { showToast } from "./showToast.js";
+import { showToast } from "./showToast.js";
 import { updateCartValue } from "./updateCartValue.js";
 
 export const removeProdFromCart=(id)=>{
@@ -17,8 +17,8 @@ export const removeProdFromCart=(id)=>{
     if(removeDiv){
         removeDiv.remove();
 
-        // // show toast when product added to the cart
-        // showToast("delete",id);
+        // show toast when product added to the cart
+        showToast("delete",id);
     }
     updateCartProductTotal();
     updateCartValue(cartProducts);

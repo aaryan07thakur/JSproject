@@ -1,4 +1,5 @@
 import { getCartProductFromLS } from "./getCartProducts.js";
+import { showToast } from "./showToast.js";
 
 import { updateCartValue } from "./updateCartValue.js";
 
@@ -28,7 +29,7 @@ export const addToCart=(envet,id,stock)=>{
         if(existingProd && quantity > 1){
             // console.log('quantity', quantity)
             quantity= Number(existingProd.quantity) + Number(quantity)
-            price=Number(price * quantity);
+            price=Number(price * quantity).toFixed(2);
 
             let updatedCart={id, quantity, price};
 
@@ -38,8 +39,8 @@ export const addToCart=(envet,id,stock)=>{
             console.log(updatedCart);
             localStorage.setItem("cartProductLS",JSON.stringify(updatedCart));
 
-            //   // show toast when product added to the cart
-            //     showToast("add",id);
+              // show toast when product added to the cart
+                showToast("add",id);
 
         };
 
@@ -59,19 +60,13 @@ export const addToCart=(envet,id,stock)=>{
 // ===========================================================
 
 
-
-
-
-
-
-
     //update the cart button value
     // cart ma kati wota value x tyo pata lagau n ko lagie
 
     updateCartValue(arrLocalStorageProduct);
 
-    //   // show toast when product added to the cart
-    //     showToast("add",id);
+      // show toast when product added to the cart
+        showToast("add",id);
     
 
 };
