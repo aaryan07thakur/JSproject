@@ -2,9 +2,9 @@ const footerHTML = `
   <footer class="section-footer">
     <div class="footer-container container">
       <div class="content_1">
-        <img src="./images/logo.png" alt="logo" />
+        <img src="./image/logo (1).png" alt="logo" />
         <p>
-          Welcome to Thapa EcomStore, <br />
+          Welcome to Hamro ECommerce Store, <br />
           your ultimate destination for
           <br />
           cutting-edge gadgets!
